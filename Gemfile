@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3' #do ~ end内部に追加。他のgemは残してください。
   #注意　sqlite3のバージョンを指定しないことで、エラーが起きた際は、メンターと相談して、適切なバージョンを指定してください。
 end
