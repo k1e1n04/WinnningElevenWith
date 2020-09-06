@@ -1,0 +1,465 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+  @import "bulma";
+
+html, body{
+  min-height: 100%;
+}
+
+*{
+  margin:0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100%;
+  overscroll-behavior:none;
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background-image: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+  color:white;
+}
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+
+}
+
+main{
+  padding-top: 90px;
+  margin-bottom: 20px;
+}
+
+.container{
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 7%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ ul{
+   list-style: none;
+ }
+
+ a{
+   text-decoration: none;
+   color: white;
+ }
+
+ header{
+   overscroll-behavior:none;
+   height: 80px;
+   background: #fff;
+   width: 100%;
+   margin-bottom: 100px;
+   position: fixed;
+   border-bottom: 1px solid #F9F9F9;
+   z-index: 10;
+ }
+
+ header a{
+   color:black;
+ }
+
+ .header-left{
+   float: left;
+ }
+
+ .header-left img{
+   margin-top: 10px;
+ }
+
+ .header-left a{
+   line-height: 80px;
+ }
+
+ .header-logo{
+  float: left;
+  width:60px;
+  height: 60px;
+  border-radius: 20px;
+ }
+
+ .menu-icon{
+   color:black;
+   display:none;
+ }
+
+ .title{
+  font-family: "游ゴシック";
+  font-size: 20px;
+  color: #0084FE;
+  margin-left: 20px;
+  line-height: 70px;
+  float:left;
+ }
+
+ .header-right{
+   display:block;
+   
+}
+
+.header-right li{
+   margin-top: 20px;
+   line-height:40px;
+   padding:0 10px;
+   border-radius: 20px;
+   float:right;
+   margin-left: 20px;
+   font-size: 16px;
+  }
+  
+  .header-right li:hover{
+    box-shadow: 0px 1px 6px darkgray;
+    transition: 0.7s;
+ }
+
+ #signup{
+   border: solid 1px darkgray;
+   display: block;
+ }
+
+ .clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #fff;
+  color:black;
+}
+
+footer p{
+  text-align:center;
+}
+
+.error_message{
+  color:white;
+  background-color: #0084FE;
+  width:500px;
+  margin:0 auto;
+}
+
+ul#menu {
+	list-style-type: none;
+	width: 100%;
+	background: #ffffff;
+	opacity: 0.9;
+	position: absolute;
+	left: 0px;
+	top: 70px;
+	z-index: 990;
+	display: none;
+}
+
+ul#menu li {
+	text-align: center;
+}
+
+ul#menu li a {
+	text-decoration: none;
+	display: block;
+	padding: 15px 0;
+}
+
+ul#menu li a:hover {
+	opacity: 0.7;
+}
+
+div#sp-icon {
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 999;
+}
+
+div#sp-icon:hover {
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+div#sp-icon span,
+div#sp-icon span:before,
+div#sp-icon span:after {
+	display: inline-block;
+	width: 30px;
+	height: 3px;
+	background: #000000;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+
+div#sp-icon span {
+	left: 40%;
+	top: 50%;
+	transform: translate( -50%, -50% );
+}
+
+div#sp-icon span:before {
+	content: "";
+	transform: translateY( -10px ) rotate( 0deg );
+}
+
+div#sp-icon span:after {
+	content: "";
+	transform: translateY( 10px ) rotate( 0deg );
+}
+
+
+div.sp-open span {
+	background: transparent !important;
+}
+
+div.sp-open span:before {
+	transform: rotate( 45deg ) !important;
+}
+
+div.sp-open span:after {
+	transform: rotate( -45deg ) !important;
+}
+
+.other{
+  display: none;
+}
+
+.other a::selection{
+  background-color: #fff;
+}
+
+
+@media screen and (max-width: 1025px) {
+  .header-logo{
+    width:50px;
+    height: 50px;
+  }
+
+  .pc{
+    display: none;
+  }
+
+  .other{
+    display: block;
+  }
+
+  .menu-icon{
+    display:block;
+    font-size:16px;
+  }
+
+  .title{
+    font-size:16px;
+  }
+
+  .header-right li{
+    font-size: 8px;
+    color: rgba(40, 250, 50, 0.356);
+  }
+
+  .header-right li{
+    font-size:10px;
+    padding:0 5px;
+    margin-left: 10px;
+  }
+
+  .post-left{
+    position: absolute;
+    width:100%;
+    font-size:6px;
+  }
+
+  .post-left img{
+    margin:0;
+    width:45px;
+    height: 45px;
+    box-shadow: 0 2px 7px #4f98cc;
+  }
+
+  .username{
+    min-width: 50%;
+    position: relative;
+    top:0;
+    left:70px;
+  }
+
+  .time{
+    padding-top: 45px;
+    font-size:7px;
+    width:220px;
+  }
+
+  .tool-bar p{
+  margin-left: 30px;
+  }
+
+  .post img{
+    max-width: 400px;
+    max-height: 400px;
+  }
+  
+  .post-right{
+    padding-left: 10%;
+    margin-top: 60px;
+    width: 100%;
+  }
+  
+  .status{
+    display: block;
+  }
+  
+  .player-detail table{
+    font-size: 12px;
+  }
+
+.entry{
+  margin-top: 25px;
+  font-size: 10px;
+}
+
+.scud img{
+  width:100%;
+  height: 55%;
+}
+
+}
+@media screen and (max-width: 670px) {
+  /* スマホ用のスタイル */
+  
+  .title{
+    font-size: 14px;
+  }
+
+  .post-create{
+    font-size: 16px;
+  }
+  
+  .post img{
+    max-width: 250px;
+    max-height: 250px;
+  }
+  
+  .post-right{
+    font-size: 11px;
+  }
+  
+  .time{
+    font-size: 4px;
+  }
+
+  .user{
+    padding:10px 30px;
+    font-size:12px;
+  }
+
+  .user-left img{
+    width:40px;
+    height: 40px;
+  }
+
+  .user-right{
+    font-size: 11px;
+  }
+
+  
+
+  table{
+    width:90%;
+    margin:0 auto;
+    border-color: rgb(133, 133, 133);
+  }
+  
+  td{
+    width:50%;
+    line-height: 30px;
+  }
+
+  .rating-box .ratings .fa{
+    font-size:20px;
+  }
+
+  .rating-value-display{
+    font-size: 12px;
+  }
+
+  .average-score-display{
+    font-size:12px;
+  }
+
+  .reviews th{
+    font-size:8px;
+  }
+
+  .reviews td{
+    font-size:8px;
+  }
+
+  .post_field{
+    width:100%;
+  }
+
+  .field{
+    width:100%;
+  }
+
+  .actions{
+    width: 100%;
+  }
+  
+  .post_field input{
+    width:100%;
+  }
+  
+  .field input{
+    width:100%;
+  }
+
+  .actions input{
+    width: 100%;
+  }
+  
+  .actions button{
+    width: 100%;
+  }
+
+  .hello h1{
+    font-weight: bold;
+    font-size:27px;
+  }
+
+  .hello h2{
+    font-weight: bold;
+    font-size:24px;
+    margin-top: 10px;;
+  }
+
+  .introduce{
+    margin-top:30px;
+    font-weight: bolder;
+    font-size: 18px;
+  }
+  
+}

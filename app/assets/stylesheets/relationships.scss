@@ -1,0 +1,19 @@
+// Place all the styles related to the relationships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.btn-block{
+  background-color: #0084FE;
+  border-radius: 20px;
+  border:solid 1px #0084FE;
+  opacity: 0.5;
+
+}
+
+.btn-block:hover{
+  opacity: 0.9;
+  transition: 0.8s;
+}
+
+.btn-block:focus{
+  outline: 0;
+}

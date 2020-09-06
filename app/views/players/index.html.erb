@@ -1,0 +1,28 @@
+<main>
+  <div class="container">
+    <div class="search-players">
+      <h3>選手を検索</h3>
+      <%= form_tag({controller:"players",action:"index"}, method: :get) do %>
+        <%= text_field_tag :search %>
+        <div class="submit">
+          <%= submit_tag '検索する'  %>
+        </div>
+      <% end %>
+    </div>
+    <div class="users-container">
+      <% @players.each do |u| %>
+        <div class="user">
+          <div class="user-left">
+            <%= image_tag u.icon_url ,size: "250×200" if u.icon? %>
+          </div>
+          <div class="user-right">
+            <h3><%= link_to u.name, player_path(u.id) %></h3>
+            <!--<%= link_to "編集する", edit_player_path(u.id) %>
+            <%= link_to "削除する", player_path(u.id), method: :delete %> -->
+ 
+          </div>
+        </div>
+      <% end %>   
+    </div>
+  </div>
+</main>

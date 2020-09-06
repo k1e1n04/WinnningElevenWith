@@ -1,0 +1,56 @@
+// Place all the styles related to the reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.rating-box .ratings .fa{
+  font-size:30px;
+  color:#fc0;
+  cursor: pointer;
+}
+
+.main-rating{
+  display: flex;
+}
+
+.rating-value-display{
+  font-size: 20px;
+}
+
+table{
+  table-layout: fixed;
+}
+
+
+
+.reviews td{
+  width: 5%;
+  padding:0;
+}
+
+
+.content td{
+  width:40%;
+}
+
+.reviews span{
+  color:black;
+  padding:0;
+}
+
+.a{
+  width: 20%;
+}
+
+.b{
+  width: 10%;
+}
+
+.c{
+  width: 60%;
+}
+
+.review-form{
+  width:90%;
+  margin:0 auto;
+  margin-top:20px;
+}

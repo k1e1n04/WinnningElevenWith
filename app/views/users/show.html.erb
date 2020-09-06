@@ -1,0 +1,74 @@
+
+<main>
+  <div class="container">
+    <div class="user">
+      <p><%= image_tag @users.image_url, size: "250×200" if @users.image? %></p>
+      <h2><%= @users.username %></h2>
+      <%= render partial: "relationships/follow", locals: { user: @users }%>
+      <p>レート：<%= @users.rate %></p>
+      <p>ウイイレユーザーID：<%= @users.userid %></p>
+      フォロー<%= link_to @users.followings.count, followings_show_relationship_path %>
+      フォロワー<%= link_to @users.followers.count, followers_show_relationship_path %></p>
+      <div class="scud"><%= image_tag @users.scud.url%></div>
+      <% if current_user.id == @users.id %>
+        <%= link_to "編集" , edit_user_registration_path %>
+      <% end %>
+    </div>
+    <div class="posts-container">
+      <% @posts.each do |t| %>
+        <div class="post">
+      
+          <!-- 指定されたコードを貼り付けてください -->
+          <div class="post-left">
+            <%= image_tag t.user.image_url, size: "250×200" if t.user.image? %>
+            <div class="time">
+              <%= t.created_at.to_s(:datetime_jp) %>
+            </div>
+          </div>
+          <div class="username">
+            <%= link_to t.user.username , user_path(t.user.id)%>
+          </div>
+          <div class="post-right">
+            <div class="post-body">
+              <%= t.body %>
+            </div>
+            <br>
+            <%= image_tag t.image_url %>
+            <% if t.video? %>
+              <%= video_tag t.video_url.to_s, loop: true, controls: true,autoplay: true, muted: true, :playsinline => 'true',  class: "content embed-responsive-item" %> 
+            <% end %>
+            <div class="tool-bar">
+              <% if current_user.already_liked?(t) %>
+              <!-- アイコンが表示できるように、以下のlink_toメソッドを書き換えてください -->
+                <%= link_to( post_like_path(id: t.id, post_id: t.id), method: :delete) do %>
+                  <p><span class="fa fa-heart like-btn-unlike"></span></p>
+                <% end %>                  
+              <% else %>
+              <!-- アイコンが表示できるように、以下のlink_toメソッドを書き換えてください -->
+                <%= link_to(post_likes_path(id: t.id, post_id: t.id), method: :post) do %>
+                  <p><span class="fa fa-heart like-btn"></span></p>
+                <% end %>
+              <% end %>
+              <div class="like-count">
+                <p><%= t.likes.count %></p>
+              </div>
+              <% if t.user.id == current_user.id %>
+                <%= link_to(edit_post_path(t.id)) do %>
+                  <p><span class="fa fa-wrench"></span></p>
+                <% end %>
+                <%= link_to(post_path(t.id), method: :delete) do %>
+                  <p><span class="fa fa-trash"></span></p>
+                <% end %>
+              <% end %>
+              <p><%= link_to "詳細へ", post_path(t.id) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+      
+    <!-- 以下の<% %>を使ってeach文のendを追加してください -->
+  </div>
+</main>
+
+<%= javascript_pack_tag "posts" %>

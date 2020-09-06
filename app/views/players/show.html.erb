@@ -1,0 +1,462 @@
+<main>
+  <div class="container">
+    <div class="player-detail">
+      <p class="player-icon"><%= image_tag @player.icon_url ,size: "250×200" if @player.icon? %></p>
+      <h2><%= @player.name %></h2>
+      <table border="1" style="border-collapse: collapse">
+        <tr>
+          <td>所属チーム</td>
+          <td><%= @player.team %></td>
+        </tr>
+        <tr>
+          <td>利き足</td>
+          <td><%= @player.stronger_foot %></td>
+        </tr>
+        <tr>
+          <td>身長</td>
+          <td><%= @player.height %></td>
+        </tr>
+        <tr>
+          <td>年齢</td>
+          <td><%= @player.age %></td>
+        </tr>
+        <tr>
+          <td>国籍</td>
+          <td><%= @player.country %></</td>
+        </tr>
+        <tr>
+          <td>ポジション</td>
+          <td><%= @player.position %></td>
+        </tr>
+        <tr>
+          <td>プレースタイル</td>
+          <td><%= @player.Playing_styles %></td>
+        </tr>
+        <tr>
+          <td>コスト</td>
+          <td><%= @player.cost %></td>
+        </tr>
+        <tr>
+          <td>レベルMAX</td>
+          <td><%= @player.level %></td>
+        </tr>
+        <tr>
+          <td>
+            総合値
+          </td>
+          <td><%= @player.total %></td>
+        </tr>
+      </table>
+      <h3>適性ポジション</h3>
+      <p class="positions"><%= image_tag @player.positions_url  %></p>
+      <div class="status">
+      <table border="1" style="border-collapse: collapse" >
+        <tr>
+          <td>オフェンスセンス</td>
+          <% if @player.offensive_awareness >= 95 %>
+            <td><p class="top"><%= @player.offensive_awareness %></p></td>
+          <% elsif @player.offensive_awareness >= 85 %>
+            <td><p class="high"><%= @player.offensive_awareness %></p></td>
+          <% elsif @player.offensive_awareness >= 75  %>
+            <td><p class="middle"><%= @player.offensive_awareness %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.offensive_awareness %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ボールコントロール</td>
+          <% if @player.ball_control >= 95 %>
+            <td><p class="top"><%= @player.ball_control %></p></td>
+          <% elsif @player.ball_control >= 85 %>
+            <td><p class="high"><%= @player.ball_control %></p></td>
+          <% elsif @player.ball_control >= 75  %>
+            <td><p class="middle"><%= @player.ball_control %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.ball_control %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ドリブル</td>
+          <% if @player.dribbling >= 95 %>
+            <td><p class="top"><%= @player.dribbling %></p></td>
+          <% elsif @player.dribbling >= 85 %>
+            <td><p class="high"><%= @player.dribbling %></p></td>
+          <% elsif @player.dribbling >= 75  %>
+            <td><p class="middle"><%= @player.dribbling %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.dribbling %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ボールキープ</td>
+          <% if @player.tight_possession >= 95 %>
+            <td><p class="top"><%= @player.tight_possession %></p></td>
+          <% elsif @player.tight_possession >= 85 %>
+            <td><p class="high"><%= @player.tight_possession %></p></td>
+          <% elsif @player.tight_possession >= 75  %>
+            <td><p class="middle"><%= @player.tight_possession %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.tight_possession %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>グランダーパス</td>
+          <% if @player.low_pass >= 95 %>
+            <td><p class="top"><%= @player.low_pass %></p></td>
+          <% elsif @player.low_pass >= 85 %>
+            <td><p class="high"><%= @player.low_pass %></p></td>
+          <% elsif @player.offensive_awareness >= 75  %>
+            <td><p class="middle"><%= @player.low_pass %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.low_pass %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>フライパス</td>
+          <% if @player.lofted_pass >= 95 %>
+            <td><p class="top"><%= @player.lofted_pass %></p></td>
+          <% elsif @player.lofted_pass >= 85 %>
+            <td><p class="high"><%= @player.lofted_pass %></p></td>
+          <% elsif @player.lofted_pass >= 75  %>
+            <td><p class="middle"><%= @player.lofted_pass %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.lofted_pass %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>決定力</td>
+          <% if @player.finishing >= 95 %>
+            <td><p class="top"><%= @player.finishing %></p></td>
+          <% elsif @player.finishing >= 85 %>
+            <td><p class="high"><%= @player.finishing %></p></td>
+          <% elsif @player.finishing >= 75  %>
+            <td><p class="middle"><%= @player.finishing %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.finishing %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ヘディング</td>
+          <% if @player.heading >= 95 %>
+            <td><p class="top"><%= @player.heading %></p></td>
+          <% elsif @player.dribbling >= 85 %>
+            <td><p class="high"><%= @player.heading %></p></td>
+          <% elsif @player.dribbling >= 75  %>
+            <td><p class="middle"><%= @player.heading %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.heading %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>プレースキック</td>
+          <% if @player.set_piece_taking >= 95 %>
+            <td><p class="top"><%= @player.set_piece_taking %></p></td>
+          <% elsif @player.set_piece_taking >= 85 %>
+            <td><p class="high"><%= @player.set_piece_taking %></p></td>
+          <% elsif @player.set_piece_taking >= 75  %>
+            <td><p class="middle"><%= @player.set_piece_taking %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.set_piece_taking %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>カーブ</td>
+          <% if @player.curve >= 95 %>
+            <td><p class="top"><%= @player.curve %></p></td>
+          <% elsif @player.curve >= 85 %>
+            <td><p class="high"><%= @player.curve %></p></td>
+          <% elsif @player.curve >= 75  %>
+            <td><p class="middle"><%= @player.curve %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.curve %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>スピード</td>
+          <% if @player.speed >= 95 %>
+            <td><p class="top"><%= @player.speed %></p></td>
+          <% elsif @player.speed >= 85 %>
+            <td><p class="high"><%= @player.speed %></p></td>
+          <% elsif @player.speed >= 75  %>
+            <td><p class="middle"><%= @player.speed %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.speed %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>瞬発力</td>
+          <% if @player.acceleration >= 95 %>
+            <td><p class="top"><%= @player.acceleration %></p></td>
+          <% elsif @player.acceleration >= 85 %>
+            <td><p class="high"><%= @player.acceleration %></p></td>
+          <% elsif @player.acceleration >= 75  %>
+            <td><p class="middle"><%= @player.acceleration %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.acceleration %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>キック力</td>
+          <% if @player.kicking_power >= 95 %>
+            <td><p class="top"><%= @player.kicking_power %></p></td>
+          <% elsif @player.kicking_power >= 85 %>
+            <td><p class="high"><%= @player.kicking_power %></p></td>
+          <% elsif @player.kicking_power >= 75  %>
+            <td><p class="middle"><%= @player.kicking_power %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.kicking_power %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ジャンプ</td>
+          <% if @player.jumping >= 95 %>
+            <td><p class="top"><%= @player.jumping %></p></td>
+          <% elsif @player.jumping >= 85 %>
+            <td><p class="high"><%= @player.jumping %></p></td>
+          <% elsif @player.jumping >= 75  %>
+            <td><p class="middle"><%= @player.jumping %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.jumping %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>フィジカルコンタクト</td>
+          <% if @player.physical_contact >= 95 %>
+            <td><p class="top"><%= @player.physical_contact %></p></td>
+          <% elsif @player.physical_contact >= 85 %>
+            <td><p class="high"><%= @player.physical_contact %></p></td>
+          <% elsif @player.physical_contact >= 75  %>
+            <td><p class="middle"><%= @player.physical_contact %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.physical_contact %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ボディーコントロール</td>
+          <% if @player.balance >= 95 %>
+            <td><p class="top"><%= @player.balance %></p></td>
+          <% elsif @player.balance >= 85 %>
+            <td><p class="high"><%= @player.balance %></p></td>
+          <% elsif @player.balance >= 75  %>
+            <td><p class="middle"><%= @player.balance %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.balance %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>スタミナ</td>
+          <% if @player.stamina >= 95 %>
+            <td><p class="top"><%= @player.stamina %></p></td>
+          <% elsif @player.stamina >= 85 %>
+            <td><p class="high"><%= @player.stamina %></p></td>
+          <% elsif @player.stamina >= 75  %>
+            <td><p class="middle"><%= @player.stamina %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.stamina %></p></td>
+          <% end %>
+        </tr>
+      </table>
+      <table border="1" style="border-collapse: collapse">
+      
+        <tr>
+          <td>デフェンスセンス</td>
+          <% if @player.defensive_awareness >= 95 %>
+            <td><p class="top"><%= @player.defensive_awareness %></p></td>
+          <% elsif @player.defensive_awareness >= 85 %>
+            <td><p class="high"><%= @player.defensive_awareness %></p></td>
+          <% elsif @player.defensive_awareness >= 75  %>
+            <td><p class="middle"><%= @player.defensive_awareness %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.defensive_awareness %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ボール奪取</td>
+          <% if @player.ball_winning >= 95 %>
+            <td><p class="top"><%= @player.ball_winning %></p></td>
+          <% elsif @player.ball_winning >= 85 %>
+            <td><p class="high"><%= @player.ball_winning %></p></td>
+          <% elsif @player.ball_winning >= 75  %>
+            <td><p class="middle"><%= @player.ball_winning %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.ball_winning %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>アグレッシブネス</td>
+          <% if @player.aggression >= 95 %>
+            <td><p class="top"><%= @player.aggression %></p></td>
+          <% elsif @player.aggression >= 85 %>
+            <td><p class="high"><%= @player.aggression %></p></td>
+          <% elsif @player.aggression >= 75  %>
+            <td><p class="middle"><%= @player.aggression %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.aggression %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ゴールキーパーセンス</td>
+          <% if @player.gk_awareness >= 95 %>
+            <td><p class="top"><%= @player.gk_awareness %></p></td>
+          <% elsif @player.gk_awareness >= 85 %>
+            <td><p class="high"><%= @player.gk_awareness %></p></td>
+          <% elsif @player.gk_awareness >= 75  %>
+            <td><p class="middle"><%= @player.gk_awareness %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.gk_awareness %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>キャッチング</td>
+          <% if @player.gk_cathing >= 95 %>
+            <td><p class="top"><%= @player.gk_cathing %></p></td>
+          <% elsif @player.gk_cathing >= 85 %>
+            <td><p class="high"><%= @player.gk_cathing %></p></td>
+          <% elsif @player.gk_cathing >= 75  %>
+            <td><p class="middle"><%= @player.gk_cathing %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.gk_cathing %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>クリアリング</td>
+          <% if @player.gk_clearing >= 95 %>
+            <td><p class="top"><%= @player.gk_clearing %></p></td>
+          <% elsif @player.gk_clearing >= 85 %>
+            <td><p class="high"><%= @player.gk_clearing %></p></td>
+          <% elsif @player.gk_clearing >= 75  %>
+            <td><p class="middle"><%= @player.gk_clearing %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.gk_clearing %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>コラプシング</td>
+          <% if @player.gk_reflexes >= 95 %>
+            <td><p class="top"><%= @player.gk_reflexes %></p></td>
+          <% elsif @player.gk_reflexes >= 85 %>
+            <td><p class="high"><%= @player.gk_reflexes %></p></td>
+          <% elsif @player.gk_reflexes >= 75  %>
+            <td><p class="middle"><%= @player.gk_reflexes %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.gk_reflexes %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>ディフレクティング</td>
+          <% if @player.gk_reach >= 95 %>
+            <td><p class="top"><%= @player.gk_reach %></p></td>
+          <% elsif @player.gk_reach >= 85 %>
+            <td><p class="high"><%= @player.gk_reach %></p></td>
+          <% elsif @player.gk_reach >= 75  %>
+            <td><p class="middle"><%= @player.gk_reach %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.gk_reach %></p></td>
+          <% end %>
+        </tr>
+      
+        <tr>
+          <td>逆足頻度</td>
+          <% if @player.weak_foot_usage >= 4 %>
+            <td><p class="top"><%= @player.weak_foot_usage %></p></td>
+          <% elsif @player.weak_foot_usage >= 3 %>
+            <td><p class="high"><%= @player.weak_foot_usage %></p></td>
+          <% elsif @player.weak_foot_usage >= 2  %>
+            <td><p class="middle"><%= @player.weak_foot_usage %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.weak_foot_usage %></p></td>
+          <% end %>
+        </tr>
+      
+        <tr>
+          <td>逆足精度</td>
+          <% if @player.weak_foot_accuracy >= 4 %>
+            <td><p class="top"><%= @player.weak_foot_accuracy %></p></td>
+          <% elsif @player.weak_foot_accuracy >= 3 %>
+            <td><p class="high"><%= @player.weak_foot_accuracy %></p></td>
+          <% elsif @player.weak_foot_accuracy >= 2  %>
+            <td><p class="middle"><%= @player.weak_foot_accuracy %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.weak_foot_accuracy %></p></td>
+          <% end %>
+        </tr>
+      
+        <tr>
+          <td>コンディション安定度</td>
+          <% if @player.conditioning >= 7 %>
+            <td><p class="top"><%= @player.conditioning %></p></td>
+          <% elsif @player.conditioning >= 5 %>
+            <td><p class="high"><%= @player.conditioning %></p></td>
+          <% elsif @player.conditioning >= 3  %>
+            <td><p class="middle"><%= @player.conditioning %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.conditioning %></p></td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>怪我耐性</td>
+          <% if @player.injury_resistance >= 4 %>
+            <td><p class="top"><%= @player.injury_resistance %></p></td>
+          <% elsif @player.injury_resistance >=3 %>
+            <td><p class="high"><%= @player.injury_resistance %></p></td>
+          <% elsif @player.injury_resistance >= 2 %>
+            <td><p class="middle"><%= @player.injury_resistance %></p></td>
+          <% else %>
+            <td><p class="low"><%= @player.injury_resistance %></p></td>
+          <% end %>
+        </tr>
+        <div class="skills">
+          <tr>
+            <td>スキル</td>
+            <td><%= @player.play_skills %></td>
+          </tr>    
+        </div>
+      </table>
+      </div>
+      <% if current_user.already_reviewed?(@player)  %>
+      <% else %>
+        <%= render "reviews/form" , review: @review, player: @player %> 
+      <% end %>
+      
+      <div class="card-content">
+        <div class="content average-score">
+          <div class="star-rating mb-2">
+            <div class="star-rating-front" style="width: <%= @player.review_score_percentage %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+          </div>
+          <div class="average-score-display ml-3 pt-2">
+            <%= @player.avg_score %>点（<%= @player.reviews.count %>件のレビュー）
+          </div>
+        </div>
+      </div>
+      <div class="reviews">
+        <table class="table is-fullwidth has-text-centered">
+          <thead>
+            <tr>
+              <th class="a">ユーザー</th>
+              <th class="b">点数</th>
+              <div class="content"><th class="c">内容</th></div>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reviews.each do |review| %>
+              <tr>
+                <td class="a"><%= review.user.username %>
+                    <% if review.user_id == current_user.id %>
+                      <%= link_to(player_review_path(id: review.id,player_id: @player.id), method: :delete) do %>
+                        <p><span class="fa fa-trash"></span></p>
+                      <% end %>
+                    <% end %>
+                </td>
+                <td class="b"><%= review.score %></td>
+                <div class="content">
+                  <td class="c"><%= review.content %></td>               
+                </div>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>

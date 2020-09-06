@@ -1,0 +1,94 @@
+<main>
+  <div class="container">
+    <div class="post">
+      <div class="post-left">
+        <%= image_tag @post.user.image_url, size: "250×200" if @post.user.image? %>
+        <div class="time">
+          <%= @post.created_at.to_s(:datetime_jp) %>
+        </div>
+      </div>
+      <div class="username">
+        <%= @post.user.username %>
+      </div>
+      <div class="post-right">
+        <div class="post-body">
+          <p><%= @post.body %></p>
+        </div>
+        <br>
+        <p><%= image_tag @post.image_url %></p>
+        <% if @post.video? %>
+          <p id="v">
+            <%= video_tag @post.video_url.to_s, loop: true, controls: true,autoplay: true, muted: true, :playsinline => 'true',  class: "content embed-responsive-item" %> 
+          </p>
+        <% end %>
+        <div class="tool-bar">
+          <% if current_user.already_liked?(@post) %>
+            <!-- アイコンが表示できるように、以下のlink_toメソッドを書き換えてください -->
+            <%= link_to(post_like_path(@post), method: :delete) do %>
+              <p><span class="fa fa-heart like-btn-unlike"></span></p>
+            <% end %>                  
+          <% else %>
+            <!-- アイコンが表示できるように、以下のlink_toメソッドを書き換えてください -->
+            <%= link_to(post_likes_path(@post), method: :post) do %>
+              <p><span class="fa fa-heart like-btn"></span></p>
+            <% end %>
+          <% end %>
+          <div class="like-count">
+            <p><%= @post.likes.count %></p>
+          </div>
+          <% if @post.user_id == current_user.id %>
+            <%= link_to(edit_post_path(@post.id)) do %>
+              <p><span class="fa fa-wrench"></span></p>
+            <% end %>
+            <%= link_to(post_path(@post.id), method: :delete) do %>
+              <p><span class="fa fa-trash"></span></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="comment-wrapper">
+    <p>コメント</p>
+       <% @post.comments.each do |c| %>
+        <div class="post">
+          <div class="post-left">
+            <%= image_tag c.user.image_url, size: "250×200" if c.user.image? unless c.user.blank?%>
+            <div class="time">
+              <%= c.created_at.to_s(:datetime_jp) %>
+            </div>
+          </div>
+          <div class="username">
+            <%= c.user.username unless c.user.blank? %>
+          </div>
+          <div class="post-right">
+            <div class="post-body">
+              <%= c.comment %>
+            </div>
+            <%=link_to(post_comment_path(@post, c), method: :delete) do %>
+              <p><span class="fa fa-trash"></span></p>
+            <% end %>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    </div>
+    <div class="comment-form">
+      <% if user_signed_in? %>
+        <%= form_for ([@post, @post.comments.build]) do |f| %>
+          <div class="field">
+            <p>コメントする</p>
+            <%= f.text_field :comment%>
+          </div>
+          <div class="actions">
+            <%= button_tag type: "submit" do %>
+              <i class="fa fa-comments"></i> コメントする
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</main>
+
+<%= javascript_pack_tag "posts" %>

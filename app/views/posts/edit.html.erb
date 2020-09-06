@@ -1,0 +1,23 @@
+<main>
+  <div class="container">
+  <% @post.errors.full_messages.each do |message| %>
+    <div class="error_message">
+      <%= message %>
+    </div>
+  <% end %>
+  <h3>投稿を編集</h3>
+    <%= form_for @post do |f| %>
+      <div class="post_field">
+        <%= f.label :投稿 %>
+        <%= f.text_field :body, :size => 140 %> 
+      </div>
+      <div class="field">
+        <%= f.label :画像 %>
+        <%= f.file_field :image %>
+      </div>
+      <div class="actions">
+        <%= f.submit "編集する" %>
+      </div>
+    <% end %>
+  </div>
+</main>

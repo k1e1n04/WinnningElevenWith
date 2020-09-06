@@ -1,0 +1,187 @@
+<main>
+<% if current_user.id == 10 %>
+  <div class="container">
+    <%= form_for @player do |f| %>
+      <div class="field">
+        <%= f.label :名前 %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :アイコン %>
+        <%= f.file_field :icon %>
+      </div>
+      <div class="field">
+        <%= f.label :適性ポジション %>
+        <%= f.file_field :positions %>
+      </div>
+      <div class="field">
+        <%= f.label :チーム %>
+        <%= f.text_field :team %>
+      </div>
+      <div class="field">
+        <%= f.label :総合値 %>
+        <%= f.number_field :total %>
+      </div>
+      <div class="field">
+        <%= f.label :レベル %>
+        <%= f.number_field :level %>
+      </div>
+      <div class="field">
+        <%= f.label :利き足 %>
+        <%= f.text_field :stronger_foot %>
+      </div>
+      <div class="field">
+        <%= f.label :身長 %>
+        <%= f.number_field :height %>
+      </div>
+      <div class="field">
+        <%= f.label :年齢 %>
+        <%= f.number_field :age %>
+      </div>
+      <div class="field">
+        <%= f.label :国籍 %>
+        <%= f.text_field :country %>
+      </div>
+      <div class="field">
+        <%= f.label :ポジション %>
+        <%= f.text_field :position %>
+      </div>
+      <div class="field">
+        <%= f.label :プレースタイル %>
+        <%= f.text_field :Playing_styles %>
+      </div>
+      <div class="field">
+        <%= f.label :コスト %>
+        <%= f.number_field :cost %>
+      </div>
+      <div class="field">
+        <%= f.label :オフェンスセンス %>
+        <%= f.number_field :offensive_awareness %>
+      </div>
+      <div class="field">
+        <%= f.label :ボールコントロール %>
+        <%= f.number_field :ball_control %>
+      </div>
+      <div class="field">
+        <%= f.label :ドリブル %>
+        <%= f.number_field :dribbling %>
+      </div>
+      <div class="field">
+        <%= f.label :ボールキープ %>
+        <%= f.number_field :tight_possession %>
+      </div>
+      <div class="field">
+        <%= f.label :グランダーパス %>
+        <%= f.number_field :low_pass %>
+      </div>
+      <div class="field">
+        <%= f.label :フライパス %>
+        <%= f.number_field :lofted_pass %>
+      </div>
+      <div class="field">
+        <%= f.label :決定力 %>
+        <%= f.number_field :finishing %>
+      </div>
+      <div class="field">
+        <%= f.label :ヘディング %>
+        <%= f.number_field :heading %>
+      </div>
+      <div class="field">
+        <%= f.label :プレースキック %>
+        <%= f.number_field :set_piece_taking %>
+      </div>
+      <div class="field">
+        <%= f.label :カーブ %>
+        <%= f.number_field :curve %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :スピード %>
+        <%= f.number_field :speed %>
+      </div>
+      <div class="field">
+        <%= f.label :瞬発力 %>
+        <%= f.number_field :acceleration %>
+      </div>
+      <div class="field">
+        <%= f.label :キック力 %>
+        <%= f.number_field :kicking_power %>
+      </div>
+      <div class="field">
+        <%= f.label :ジャンプ %>
+        <%= f.number_field :jumping %>
+      </div>
+      <div class="field">
+        <%= f.label :フィジカルコンタクト %>
+        <%= f.number_field :physical_contact %>
+      </div>
+      <div class="field">
+        <%= f.label :ボディーコントロール %>
+        <%= f.number_field :balance %>
+      </div>
+      <div class="field">
+        <%= f.label :スタミナ %>
+        <%= f.number_field :stamina %>
+      </div>
+      <div class="field">
+        <%= f.label :デフェンスセンス %>
+        <%= f.number_field :defensive_awareness %>
+      </div>
+      <div class="field">
+        <%= f.label :ボール奪取 %>
+        <%= f.number_field :ball_winning %>
+      </div>
+      <div class="field">
+        <%= f.label :アグレッシブネス %>
+        <%= f.number_field :aggression %>
+      </div>
+      <div class="field">
+        <%= f.label :ゴールキーパーセンス %>
+        <%= f.number_field :gk_awareness %>
+      </div>
+      <div class="field">
+        <%= f.label :キャッチング %>
+        <%= f.number_field :gk_cathing %>
+      </div>
+      <div class="field">
+        <%= f.label :クリアリング %>
+        <%= f.number_field :gk_clearing %>
+      </div>
+      <div class="field">
+        <%= f.label :コラプシング %>
+        <%= f.number_field :gk_reflexes %>
+      </div>
+      <div class="field">
+        <%= f.label :ディフレクティング %>
+        <%= f.number_field :gk_reach %>
+      </div>
+      <div class="field">
+        <%= f.label :逆足頻度 %>
+        <%= f.number_field :weak_foot_usage %>
+      </div>
+      <div class="field">
+        <%= f.label :逆足精度 %>
+        <%= f.number_field :weak_foot_accuracy %>
+      </div>
+      <div class="field">
+        <%= f.label :コンディション安定度 %>
+        <%= f.number_field :conditioning %>
+      </div>
+      <div class="field">
+        <%= f.label :怪我耐性 %>
+        <%= f.number_field :injury_resistance %>
+      </div>
+      <div class="field">
+        <%= f.label :スキル %>
+        <%= f.text_field :play_skills %>
+      </div>
+      
+
+
+
+      <%= f.submit "編集" %>
+    <% end %>
+  
+  </div>
+  <% end %>
+</main>

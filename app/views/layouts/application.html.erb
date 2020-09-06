@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>WinningElevenWith</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="responsive.scss">
+  </head>
+
+  <body>
+    <div id="wrapper">
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <img class="header-logo" src="/logo.jpeg" alt="img">
+          <% if current_user %>
+            <a href="/posts/timeline" class="title">Winning Eleven With</a>
+          <% else %>
+            <a href="/" class="title">Winning Eleven With</a>
+          <% end %>
+        </div>
+        <div class="clearfix">
+         <div class="header-right">
+            <% if current_user %>
+              <div class="pc">
+              <ul class="ddmenu">
+                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "ユーザー一覧", users_path %></li>
+                <li><%= link_to "選手一覧" , players_path %></li>
+                <li><%= link_to "全ての投稿" , posts_path %></li>
+                <li><%= link_to current_user.username , user_path(current_user.id) %></li>         
+              </ul> 
+              </div>
+              <div class="other">
+                <div id="sp-icon" class="sp-close"><span></span></div>
+                  <ul id="menu">
+                    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to "ユーザー一覧", users_path %></li>
+                    <li><%= link_to "選手一覧" , players_path %></li>
+                    <li><%= link_to "タイムライン" , timeline_posts_path %></li>
+                    <li><%= link_to current_user.username , user_path(current_user.id) %></li>
+                  </ul>
+              </div>
+            <% else %>   
+              <div class="pc">
+              <ul>
+                <li id="signup"><%= link_to "登録する", new_user_registration_path %></li>
+                <li><%= link_to "ログイン", posts_path %></li>
+              </ul>
+              </div>           
+              <div class="other">
+                <div id="sp-icon" class="sp-close"><span></span></div>
+                <ul id="menu">
+                  <li id="signup"><%= link_to "登録する", new_user_registration_path %></li>
+                  <li><%= link_to "ログイン", posts_path %></li>
+                </ul>
+              </div>
+            <% end %>
+         </div>
+        </div>
+      </div>
+    </header>
+    <%= yield %>
+    <footer>
+      <p><small>©️Ishiken</small></p>
+    </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <%= javascript_pack_tag "sp-menu" %>
+  </body>
+</html>

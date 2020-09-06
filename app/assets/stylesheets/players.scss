@@ -1,0 +1,110 @@
+// Place all the styles related to the players controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.search-players{
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.search-players input{
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.search-players input:focus{
+  border: 1px solid #0084FE;
+  outline: 0;
+}
+
+table{
+  width:400px;
+  margin:0 auto;
+  border-color: rgb(133, 133, 133);
+}
+
+td{
+  width:50%;
+  line-height: 30px;
+}
+
+.top{
+  color:white;
+  border-radius: 7px;
+  margin: 0 auto;
+  width:45px;
+  background-color: rgb(10, 204, 218);
+}
+
+.high{
+  color:white;
+  border-radius: 7px;
+  margin: 0 auto;
+  width:45px;
+  background-color: rgb(138, 218, 10);
+}
+
+.middle{
+  color:white;
+  border-radius: 7px;
+  margin: 0 auto;
+  width:45px;
+  background-color: rgb(218, 187, 10);
+}
+
+.low{
+  color:white;
+  border-radius: 7px;
+  margin: 0 auto;
+  width:45px;
+  background-color: rgb(218, 10, 10);
+}
+
+.player-detail{
+  color:black;
+  background-color: white;
+  border-radius:20px;
+  padding-bottom: 50px;
+}
+
+.player-icon img{
+  margin-top: 10px;
+  width:100px;
+  height: 100px;
+  border-radius: 20px;
+}
+
+.positions img{
+  max-width:300px;
+  max-height: 300px;
+}
+
+.status{
+  display: flex;
+}
+
+.star-rating{
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size:25px;
+}
+
+.star-rating-front{
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #fc3;
+}
+
+.star-rating-back{
+  color: #ccc;
+}
+
+.average-score{
+  display: flex;
+}
+
+.average-score-display{
+  font-size: 16px;
+}

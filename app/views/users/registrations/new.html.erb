@@ -1,0 +1,58 @@
+<main>
+  <div class="container">
+  
+    <h2  class="new_title">新規登録</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <!--サインアップ時に名前を入力できるようにフォームを追加-->
+  
+
+      <div class="field">
+        <p>メールアドレス</p>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <p>ユーザーネーム</p>
+        <%= f.text_field :username, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <p>レート</p>
+        <%= f.text_field :rate, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <p>プロフィール画像</p>
+        <%= f.file_field :image %>
+      </div>
+
+      <div class="field">
+        <p>スカッド画像</p>
+        <%= f.file_field :scud %>
+      </div>
+
+      <div class="field">
+        <p>パスワード（６文字以上）</p>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+      <br>
+      <div class="field">
+        <p>確認用パスワード</p>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "アカウントを作成" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</main>
+

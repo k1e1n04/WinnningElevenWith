@@ -1,0 +1,15 @@
+@media screen and (max-width: 1100px) {
+  .title{
+    font-size:16px;
+  }
+  .header-right li{
+    font-size: 8px;
+    color: rgba(40, 250, 50, 0.356);
+  }
+}
+@media screen and (max-width: 670px) {
+  /* スマホ用のスタイル */
+  .title{
+    font-size: 10px;
+  }
+}

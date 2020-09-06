@@ -1,0 +1,25 @@
+<main>
+  <div class="container">
+    <div class="search-players">
+      <h3>ユーザーを検索</h3>
+        <%= form_tag({controller:"users",action:"index"}, method: :get) do %>
+          <%= text_field_tag :search %>
+          <div class="submit">
+            <%= submit_tag '検索する'  %>
+          </div>
+    </div>
+    <% end %>
+    <div class="users-container">
+      <% @users.each do |u| %>
+        <div class="user">
+          <div class="user-left">
+            <%= image_tag u.image_url, size: "250×200" if u.image? %>
+          </div>
+          <div class="user-right">
+            <%= link_to u.username , user_path(u.id) %>
+          </div>
+        </div>
+      <% end %>   
+    </div>
+  </div>
+</main>
