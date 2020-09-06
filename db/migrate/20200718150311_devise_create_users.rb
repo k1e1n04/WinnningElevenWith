@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :image, default: ""
       t.string :rate
       t.string :scud, default: ""
+      t.string :userid
 
       ## Recoverable
       t.string   :reset_password_token
