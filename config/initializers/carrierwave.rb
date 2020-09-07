@@ -14,9 +14,7 @@ if Rails.env.production?
       aws_secret_access_key: ENV['Mzn5KgU/BNSPTcTpml9GT6HIPe4V9hNBPSVl2RpM'],
     }
     config.fog_directory     =  ENV['winningelevenwith']
-    config.asset_host = 'https://s3.ap-northeast-1.amazonaws.com/winningelevenwith
-
-    .amazonaws.com'
+    config.asset_host = 'https://s3.ap-northeast-1.amazonaws.com/winningelevenwith'
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   end
 
