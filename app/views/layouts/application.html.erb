@@ -44,7 +44,7 @@
                     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
                     <li><%= link_to "ユーザー一覧", users_path %></li>
                     <li><%= link_to "選手一覧" , players_path %></li>
-                    <li><%= link_to "タイムライン" , timeline_posts_path %></li>
+                    <li><%= link_to "全ての投稿" , posts_path %></li>
                     <li><%= link_to current_user.username , user_path(current_user.id) %></li>
                   </ul>
               </div>
