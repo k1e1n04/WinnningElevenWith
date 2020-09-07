@@ -61,6 +61,23 @@
   transition: 0.8s;
 }
 
+.actions a{
+  height: 50px;
+  width: 500px;
+  background-color: #0084FE;
+  border: solid 0;
+  border-radius: 30px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.actions a:hover{
+  opacity: 0.9;
+  transition: 0.8s;
+}
+
+
+
 
 .user a{
   color:black;
