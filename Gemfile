@@ -62,6 +62,7 @@ gem 'rails-i18n'
 gem 'mini_magick'
 gem 'rmagick'
 gem 'bulma-rails'
+gem 'fog-aws'
 group :production do
   gem 'pg'
 end
