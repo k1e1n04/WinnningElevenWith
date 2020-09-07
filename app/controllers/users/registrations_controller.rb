@@ -60,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   def after_update_path_for(resource)
-    timeline_posts_path(resource)
+    timeline_posts_path
   end
 
 end
