@@ -40,18 +40,18 @@
       <% end %>
 
       <div class="field">
-        <p>パスワード（６文字以上）</p>
+        <p>パスワード変更（６文字以上）</p>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
-
+      <br>
       <div class="field">
-        <p style="padding-top:15px;">確認用パスワード</p>
+        <p style="padding-top:15px;">確認用変更パスワード</p>
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
-
+      <br>
       <div class="field" style="padding-top:5px;">
         <%= f.label :現在のパスワード %><br />
         <%= f.password_field :current_password, autocomplete: "current-password" %>
