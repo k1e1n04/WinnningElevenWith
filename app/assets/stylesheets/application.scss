@@ -16,9 +16,6 @@
 
   @import "bulma";
 
-html, body{
-  min-height: 100%;
-}
 
 *{
   margin:0;
@@ -40,7 +37,6 @@ body,
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
-
 }
 
 main{
