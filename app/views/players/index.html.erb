@@ -15,7 +15,7 @@
         <div class="user">
         
           <div class="user-left">
-            
+            <%= image_tag u.icon_url.to_s, size: "250×200" if u.icon? %>
           </div>
           <div class="user-right">
             <h3><%= link_to u.name, player_path(u.id) %></h3>

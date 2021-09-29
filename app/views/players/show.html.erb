@@ -1,7 +1,7 @@
 <main>
   <div class="container">
     <div class="player-detail">
-      <p class="player-icon"></p>
+      <p class="player-icon"><%= image_tag @player.icon_url.to_s, size: "250×200" if @player.icon? %></p>
       <h2><%= @player.name %></h2>
       <table border="1" style="border-collapse: collapse">
         <tr>
