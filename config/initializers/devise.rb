@@ -9,14 +9,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  require 'devise/orm/active_record'
-  # The secret key used by  Devise uses this key to generate
+  # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '6d75df2f8eac503fd0dd35ebb4e05b2610b560a84cbebeb2c84cb7aef620f02e5ce08290ca5ee6870b736fa24c15db2c27d915a7f654999ab52a68fe3b9d635c'
+  # config.secret_key = '6742345a9adf25623a9cbf17dfcf1d2e6bad2c8d1b620d6ad4d04b52a126bfd6f0e12226ca48904a7812ea69a49932c1a7bac581b45334d9deab2e2c0a0d63ee'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -97,8 +95,8 @@ Devise.setup do |config|
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
   # Notice that if you are skipping storage for all authentication paths, you
-  # may want to disable generating  to Devise's sessions controller by
-  # passing skip: :sessions to `devise_for` in your config/.rb
+  # may want to disable generating routes to Devise's sessions controller by
+  # passing skip: :sessions to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
@@ -107,11 +105,11 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
-  # When false, Devise will not attempt to reload  on eager load.
+  # When false, Devise will not attempt to reload routes on eager load.
   # This can reduce the time taken to boot the app but if your application
   # requires the Devise mappings to be loaded during boot time the application
   # won't boot properly.
-  # config.reload_ = true
+  # config.reload_routes = true
 
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 12. If
@@ -128,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '791edb18727da257213f81e614d4c2dab8dce0b0f91eb47235c02c9f16698eb7d886edf1184c4dfbbc5b0415801161e65d00dde9ee199d59b087d03ba749e2ff'
+  # config.pepper = '82a6f35010f17625c3c537975d57c105a1b72beed985431d7c333f3f84685736873c774925a281af88ee494354cfb1ba1ec8a804a5b24663eca91e2de823189e'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -249,7 +247,7 @@ Devise.setup do |config|
   config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
-  # devise role declared in your  (usually :user).
+  # devise role declared in your routes (usually :user).
   # config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out

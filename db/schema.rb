@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_085708) do
+ActiveRecord::Schema.define(version: 2020_08_17_052727) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 2020_08_21_085708) do
     t.integer "finishing"
     t.integer "heading"
     t.integer "set_piece_taking"
+    t.integer "curl"
     t.integer "speed"
     t.integer "acceleration"
     t.integer "kicking_power"
-    t.string "jump"
     t.integer "jumping"
     t.integer "physical_contact"
     t.integer "balance"
@@ -114,18 +114,17 @@ ActiveRecord::Schema.define(version: 2020_08_21_085708) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "username"
+    t.integer "userid"
+    t.string "scud"
+    t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
-    t.text "plofile"
+    t.integer "rate"
     t.string "image_name"
-    t.string "image"
-    t.string "scud"
-    t.string "rate"
-    t.string "userid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -45,6 +45,7 @@ main{
   margin-bottom: 20px;
 }
 
+
 .container{
   max-width: 1170px;
   width: 100%;
@@ -149,6 +150,15 @@ footer {
 
 footer p{
   text-align:center;
+}
+
+.actions{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.new-title{
+  margin-top: 50px;
 }
 
 .error_message{

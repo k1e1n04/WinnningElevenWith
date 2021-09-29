@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .new_title{
   color:white;
-
 }
 
 .field{
@@ -31,6 +30,8 @@
   outline: none;
 }
 
+
+
 .actions input{
   height: 50px;
   width: 500px;
@@ -38,6 +39,7 @@
   border: solid 0;
   border-radius: 30px;
   opacity: 0.6;
+  margin: 0 auto;
   margin-bottom: 10px;
 }
 

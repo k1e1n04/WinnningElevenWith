@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, :only => [:index, :show]
 
   resources :posts do
     collection do
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   end
   
 
-  resources :users, :only => [:index, :show]
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/ing.html
   root 'hello#index'
