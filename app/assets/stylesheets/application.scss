@@ -32,6 +32,12 @@ body {
 
 }
 
+.main-container{
+  margin-top: 0;
+  background-image:url("/soccer.jpg");
+  background-size: cover;
+}
+
 body,
 #wrapper {
   display: flex;

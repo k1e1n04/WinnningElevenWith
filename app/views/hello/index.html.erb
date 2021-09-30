@@ -1,14 +1,17 @@
+<%= stylesheet_link_tag "hello", media: "all" %>
 <main>
+  <div class="main-container">
+  
   <div class="container">
     <div class="hello">
     <h1 id="hello">Winning Eleven With</h1>
-    <h2 id="hello">ウイイレアプリを愛する人のためのSNS</h2>
-    <div class="introduce">
+    <!--<h2 id="hello">ウイイレアプリを愛する人のためのSNS</h2>-->
+    <!--<div class="introduce">
       <p>ウイイレユーザーと繋がろう</p>
       <p>今の気持ちを投稿しよう</p>
       <p>選手を見つけ評価しよう</p>
       <p>ウイイレはもっと楽しくなる</p>
-    </div>
+    </div>-->
     <div class="actions">
       <%= button_to "ログイン", posts_path %>
     </div>
@@ -17,5 +20,6 @@
       <%= link_to "登録する", new_user_registration_path %>
     </div>
     </div>
+  </div>
   </div>
 </main>

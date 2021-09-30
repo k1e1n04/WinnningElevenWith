@@ -1,4 +1,6 @@
+<%= stylesheet_link_tag "hello", media: "all" %>
 <main>
+  <div class="main-container">
   <div class="container">
   
     <h2 class="new_title">ログイン</h2>
@@ -19,7 +21,9 @@
         <%= f.submit "ログイン" %>
       </div>
     <% end %>
+    <%= link_to "登録する", new_user_registration_path %>
 
+  </div>
   </div>
 </main>
 
