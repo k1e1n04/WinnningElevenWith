@@ -7,15 +7,15 @@ CarrierWave.configure do |config|
   if Rails.env.production? || Rails.env.development?
     config.storage :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory     =  'winningelevenwith'
-    config.asset_host = 'https://s3.ap-northeast-1.amazonaws.com/winningelevenwith'
+    config.fog_directory     =  ENV['AWS_FOG_DIRECTORY']
+    config.asset_host = ENV['AWS_ASSER_HOST']
     config.fog_public = false
     config.fog_credentials = {
       # Amazon S3用の設定
       provider: 'AWS',
       region: 'ap-northeast-1',
-      aws_access_key_id: 'AKIA4GIXPXKY4OIN5KUR',
-      aws_secret_access_key: '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',
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     }
   else
     config.storage :file
